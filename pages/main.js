@@ -1,3 +1,4 @@
+
 import{games} from './games.js'
 
 // varibles
@@ -11,10 +12,23 @@ let games_played = 0
 let current_game = ""
 let headerContainer = document.querySelector(".headerContainer");
 var frame = document.createElement("iframe");
-frame.scroll = false
+frame.scrolling = "no"
 // end
 
 let pageIndex = 1
+
+document.addEventListener("keydown", function(event) {
+    if (event.which == "221") {
+        let cmd = prompt("CMD")
+
+        cmds.map(function(i){
+            console.log(i)
+            if (i.name == cmd) {
+                cmd_init(i)
+            }
+        })
+    }
+  })
 
 function fullscreen() {
     if (frame.requestFullscreen) {
@@ -120,7 +134,7 @@ function create_iframe(link,r){
             help.id = "help"
             help.href="https://docs.google.com/document/d/1IcT91NbslhsEM_DF35MW56ak_skqRVmq7FFU1NMNxE4/edit?usp=sharing"
             help.innerHTML = "Click here for help"
-
+            
             document.getElementById("download-holder").appendChild(download)
             document.getElementById("download-holder").appendChild(help)
         } else {
@@ -129,8 +143,6 @@ function create_iframe(link,r){
 
             if (!r) {
                 frame.src = "https://"+link;
-            } else {
-                frame.src = link
             }
             
             holder.forEach(removeBtn => { 
@@ -333,8 +345,11 @@ document.getElementById("previousPage").addEventListener("click", function() {
 });
 
 // create all games from const
-games.map(function(i){
+function ver(i){
     u(i)
+}
+games.map(function(i){
+    ver(i)
 })
 
 // visit counter with ':'
@@ -348,3 +363,4 @@ window.addEventListener('keydown', function (e) {
 if (current_page == 1) {
     document.getElementById("pg"+current_page).style.display = "flex"
 }
+

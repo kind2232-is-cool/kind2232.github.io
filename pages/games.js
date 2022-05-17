@@ -512,7 +512,7 @@ export const games = [
     {
         gamename: "Subway Surfers",
         gameIMG : "images/unnamed (5).png",
-        link: "yell0wsuit.github.io/html5-games/games/subway-surfers/"   ,
+        link: "waitwhosjoe.github.io/SubwaySurfers/"   ,
         viewed_on: 0,
     },
     {

@@ -33,7 +33,7 @@ export const games = [
     {
         gamename: "MineKhan",
         gameIMG : "images/khan.jpg",
-        link: "kind22332.github.io/minekhan/"   ,
+        link: "kind2232-is-cool.github.io/minekhan/"   ,
         viewed_on: 0,                genre: "None"
     },
     {
